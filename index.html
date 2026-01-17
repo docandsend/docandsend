@@ -408,7 +408,6 @@
       margin-top: 10px;
     }
 
-    /* Responsive */
     @media (max-width: 880px) {
       header {
         flex-direction: column;
@@ -439,6 +438,46 @@
         align-items: flex-start;
       }
     }
+
+        /* Enhanced Mobile Responsiveness - Comprehensive Fixes */
+
+        /* Update 880px breakpoint with centered alignment */
+        @media (max-width: 880px) {
+                header { align-items: center; }
+                .header-cta { align-items: center; width: 100%; max-width: 400px; }
+                .brand img { width: 220px; max-width: 90%; }
+              }
+
+        /* Tablet/Large mobile (521px-767px) */
+        @media (max-width: 767px) {
+                body { font-size: 20px; }
+                .hero-title { font-size: 1.9rem; }
+                .card { padding: 16px; }
+              }
+
+        /* Mobile optimizations (390px-520px) - CRITICAL FIXES */
+        @media (max-width: 520px) {
+                body { font-size: 18px; }
+                /* FIX: Remove scale transform that breaks layout */
+                .header-cta { transform: scale(1); }
+                .brand img { width: 180px; max-width: 85%; }
+                .phone-number { font-size: 1.3rem; }
+                /* Button optimizations */
+                .btn-primary { min-height: 44px; padding: 8px 18px; font-size: 0.88rem; }
+                .btn-primary span.icon { font-size: 1rem; }
+                /* Touch target optimization */
+                a.phone-number { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 8px; }
+              }
+
+        /* Extra small mobile (320px-390px - iPhone SE, older devices) */
+        @media (max-width: 390px) {
+                body { font-size: 16px; }
+                .header-cta { transform: scale(0.95); gap: 4px; }
+                .brand img { width: 160px; }
+                .btn-primary { padding: 6px 14px; font-size: 0.82rem; gap: 6px; }
+                .phone-label { font-size: 0.7rem; }
+                .hero-title { font-size: 1.5rem; }
+              }
   </style>
 
   <!-- LocalBusiness Schema for a mobile notary in Nashville -->
@@ -505,11 +544,10 @@
     <header>
       <div class="brand">
         <!-- Replace src with the hosted logo path on GoDaddy -->
-        <img src="/Doc&Send_Logo.jpg" alt="Doc & Send Mobile Notary logo"  style="width: 300px; height: auto; display: block; margin: 0 auto;" />
-      </div>
+            <img src="/Doc&Send_Logo.jpg" alt="Doc & Send Mobile Notary logo" />      </div>
       <div class="header-cta">
         <div class="phone-label">Call or Text</div>
-        <a class="phone-number" href="tel:16154842552">615‑484‑2552</a>
+        <a class="phone-number" href="tel:16154842552">615‑484‑2552</a
         <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
           <span class="icon">📞</span>
           <span>Call Now</span>
