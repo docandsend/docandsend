@@ -17,7 +17,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://docandsend.com/path-to-your-logo.jpg" />
 
-  <!-- Basic Figma-style design system -->
   <style>
     :root {
       --ds-navy: #0b2340;
@@ -36,7 +35,7 @@
 
     body {
       margin: 0;
-        font-size: 22.4px;
+      font-size: 22.4px;
       font-family: var(--ds-font-sans);
       color: var(--ds-text);
       background: radial-gradient(circle at top left, #fdfaf5 0%, #f3f4f6 55%, #e5e7eb 100%);
@@ -63,11 +62,26 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      justify-content: center;
+      width: 100%;
     }
 
+    /*
+      LOGO RESPONSIVE REQUIREMENT:
+      - Keep at least 20% open space on each side of the logo across devices.
+      - Enforced by max-width: 60vw (60% of viewport width).
+      - clamp() prevents being too small or too large:
+          min: 160px
+          preferred: 45vw (scales smoothly on mid-sized screens)
+          max: 520px (caps on large desktops)
+      - height auto preserves aspect ratio.
+    */
     .brand img {
-      width: 128.625px;
+      display: block;
+      width: clamp(160px, 45vw, 520px);
+      max-width: 60vw;     /* ensures ~>=20% space on each side */
       height: auto;
+      margin: 0 auto;
     }
 
     .brand-text {
@@ -96,8 +110,8 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
-        transform: scale(1.3);
-        text-align: center;
+      transform: scale(1.3);
+      text-align: center;
       font-size: 0.9rem;
     }
 
@@ -224,7 +238,9 @@
     }
 
     .hero-highlight {
-    background: #2f445c;                                                                          border-radius: var(--ds-radius-lg);      padding: 22px 22px 18px;
+      background: #2f445c;
+      border-radius: var(--ds-radius-lg);
+      padding: 22px 22px 18px;
       color: #f9fafb;
       box-shadow: 0 22px 48px rgba(15, 23, 42, 0.55);
       position: relative;
@@ -275,10 +291,7 @@
       margin-top: 10px;
     }
 
-    /* Sections */
-    section {
-      margin-bottom: 40px;
-    }
+    section { margin-bottom: 40px; }
 
     .section-header {
       display: flex;
@@ -332,9 +345,7 @@
       font-size: 0.9rem;
     }
 
-    .card ul li + li {
-      margin-top: 2px;
-    }
+    .card ul li + li { margin-top: 2px; }
 
     .meta-line {
       font-size: 0.8rem;
@@ -357,7 +368,6 @@
       color: var(--ds-navy);
     }
 
-    /* CTA strip */
     .cta-strip {
       background: #0b2340;
       border-radius: var(--ds-radius-lg);
@@ -371,13 +381,8 @@
       box-shadow: 0 18px 42px rgba(15,23,42,0.65);
     }
 
-    .cta-strip-text {
-      font-size: 0.96rem;
-    }
-
-    .cta-strip-text strong {
-      font-weight: 600;
-    }
+    .cta-strip-text { font-size: 0.96rem; }
+    .cta-strip-text strong { font-weight: 600; }
 
     .cta-strip-sub {
       font-size: 0.8rem;
@@ -385,7 +390,6 @@
       margin-top: 2px;
     }
 
-    /* Footer */
     footer {
       margin-top: 40px;
       border-top: 1px solid rgba(148, 163, 184, 0.35);
@@ -404,91 +408,74 @@
       margin-right: 8px;
     }
 
-    .legal-line {
-      margin-top: 10px;
-    }
+    .legal-line { margin-top: 10px; }
 
+    /* Responsive */
     @media (max-width: 880px) {
       header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
       .header-cta {
-        align-items: flex-start;
+        align-items: center;
+        width: 100%;
+        max-width: 520px;
       }
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero-highlight {
-        order: -1;
-      }
-      .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
+      .hero-highlight { order: -1; }
+      .grid-2 { grid-template-columns: minmax(0, 1fr); }
+
+      /* Keep the 20% side-space rule while dialing down the max logo size slightly */
+      .brand img {
+        width: clamp(150px, 55vw, 460px);
+        max-width: 60vw;
       }
     }
 
     @media (max-width: 520px) {
-      .hero-title {
-        font-size: 1.7rem;
+      body { font-size: 18px; }
+      .hero-title { font-size: 1.7rem; }
+      .page { padding-inline: 16px; }
+      .cta-strip { align-items: flex-start; }
+
+      /* FIX: Remove scale transform that can cause overflow on small screens */
+      .header-cta { transform: scale(1); }
+
+      /* Logo still respects 60vw => ~20% side margins */
+      .brand img {
+        width: clamp(140px, 60vw, 360px);
+        max-width: 60vw;
       }
-      .page {
-        padding-inline: 16px;
-      }
-      .cta-strip {
-        align-items: flex-start;
-      }
+
+      .phone-number { font-size: 1.3rem; }
+      .btn-primary { min-height: 44px; padding: 8px 18px; font-size: 0.88rem; }
     }
 
-        /* Enhanced Mobile Responsiveness - Comprehensive Fixes */
+    @media (max-width: 390px) {
+      body { font-size: 16px; }
+      .hero-title { font-size: 1.5rem; }
 
-        /* Update 880px breakpoint with centered alignment */
-        @media (max-width: 880px) {
-                header { align-items: center; }
-                .header-cta { align-items: center; width: 100%; max-width: 400px; }
-                .brand img { width: 264; max-width: 90%; }
-              }
+      .brand img {
+        width: clamp(130px, 60vw, 320px);
+        max-width: 60vw;
+      }
 
-        /* Tablet/Large mobile (521px-767px) */
-        @media (max-width: 767px) 264
-                body { font-size: 20px; }
-                .hero-title { font-size: 1.9rem; }
-                .card { padding: 16px; }
-              }
-
-        /* Mobile optimizations (390px-520px) - CRITICAL FIXES */
-        @media (max-width: 520px) {
-                body { font-size: 18px; }
-                /* FIX: Remove scale transform that breaks layout */
-                .header-cta { transform: scale(1); }
-                .brand img { width: 216; max-width: 85%; }
-                .phone-number { font-size: 1.3rem; }
-                /* Button optimizations */
-                .btn-primary { min-height: 44px; padding: 8px 18px; font-size: 0.88rem; }
-                .btn-primary span.216 { font-size: 1rem; }
-                /* Touch target optimization */
-                a.phone-number { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 8px; }
-              }
-
-        /* Extra small mobile (320px-390px - iPhone SE, older devices) */
-        @media (max-width: 390px) {
-                body { font-size: 16px; }
-                .header-cta { transform: scale(0.95); gap: 4px; }
-                .brand img { width: 192; }
-                .btn-primary { padding: 6px 14px; font-size: 0.82rem; gap: 6px; }
-                .phone-label { font-size: 0.7rem; }
-                .hero-title { font-size: 1.5rem; }
-              192
+      .btn-primary { padding: 6px 14px; font-size: 0.82rem; gap: 6px; }
+      .phone-label { font-size: 0.7rem; }
+    }
   </style>
 
-  <!-- LocalBusiness Schema for a mobile notary in Nashville -->
+  <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": " & Send Mobile Notary Services",
-    "image": "https://andsend.com/path-to-your-logo.jpg",
-    "@id": "https://andsend.com/",
-    "url": "https://andsend.com/",
+    "name": "Doc & Send Mobile Notary Services",
+    "image": "https://docandsend.com/path-to-your-logo.jpg",
+    "@id": "https://docandsend.com/",
+    "url": "https://docandsend.com/",
     "telephone": "+1-615-484-2552",
     "priceRange": "$",
     "address": {
@@ -510,22 +497,13 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
         "opens": "12:00",
         "closes": "21:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
+        "dayOfWeek": ["Saturday","Sunday"],
         "opens": "09:00",
         "closes": "16:00"
       }
@@ -543,43 +521,46 @@
   <div class="page">
     <header>
       <div class="brand">
-        <!-- Replace src with the hosted logo path on GoDaddy -->
-            <img src="/DocandSend_Logo2.png" alt="Doc & Send Mobile Notary logo" />      </div>
+        <!-- IMPORTANT:
+             Put DocandSend_Logo2.png in the SAME folder as this HTML file (repo root if using GitHub Pages). -->
+        <img src="DocandSend_Logo2.png" alt="Doc &amp; Send Mobile Notary logo" />
+      </div>
+
       <div class="header-cta">
         <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
           <span class="icon">📞</span>
-          <span>615‑484‑2552 • Call Now</span>
+          <span>615-484-2552 • Call Now</span>
         </button>
-                            <button class="btn-primary" onclick="window.location.href='https://calendly.com/youroneclickhome/serviceconsult'">
-                                                      <span class="icon">📅</span>
-                                                      <span>Schedule an Appointment</span>
-                                                  </button>
+
+        <button class="btn-primary" onclick="window.location.href='https://calendly.com/youroneclickhome/serviceconsult'">
+          <span class="icon">📅</span>
+          <span>Schedule an Appointment</span>
+        </button>
       </div>
     </header>
 
-    <!-- HERO -->
     <main>
       <section class="hero">
         <div class="hero-card">
           <div class="eyebrow">
-            <span>On‑Call Mobile Notary</span>
+            <span>On-Call Mobile Notary</span>
             <span>• Nashville &amp; Davidson County</span>
           </div>
           <h1 class="hero-title">Doc &amp; Send – Mobile Notary Public</h1>
           <div class="hero-kicker">Midday, evening, and weekend mobile notarizations — including hospital visits.</div>
           <p class="hero-copy">
-            Professional Tennessee notary public traveling to your home, office, or medical facility for time‑sensitive documents, powers of attorney, and more.
+            Professional Tennessee notary public traveling to your home, office, or medical facility for time-sensitive documents, powers of attorney, and more.
           </p>
           <div class="hero-actions">
             <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
               <span class="icon">📲</span>
-              <span>Call or Text 615‑484‑2552</span>
+              <span>Call or Text 615-484-2552</span>
             </button>
             <a class="secondary-link" href="#availability">View today’s availability ↓</a>
           </div>
           <div class="hero-meta">
-            <span><strong>Same‑day</strong> appointments during listed hours.</span>
-            <span>Mobile notary for Nashville, Antioch, Madison, Hermitage & surrounding communities.</span>
+            <span><strong>Same-day</strong> appointments during listed hours.</span>
+            <span>Mobile notary for Nashville, Antioch, Madison, Hermitage &amp; surrounding communities.</span>
           </div>
         </div>
 
@@ -587,12 +568,12 @@
           <div class="hero-highlight-inner">
             <div class="hero-highlight-title">When we’re available</div>
             <p class="hero-highlight-text">
-              Flexible midday, after‑work, and weekend appointments scheduled around your needs.
+              Flexible midday, after-work, and weekend appointments scheduled around your needs.
             </p>
             <div class="hero-highlight-hours">
               <div><strong>Weekdays:</strong> 12:00 PM – 9:00 PM</div>
               <div><strong>Weekends:</strong> 9:00 AM – 4:00 PM</div>
-              <div>Same‑day slots based on availability.</div>
+              <div>Same-day slots based on availability.</div>
               <div>Call or text to confirm today.</div>
             </div>
             <div class="badge-pill">
@@ -603,7 +584,6 @@
         </aside>
       </section>
 
-      <!-- SERVICES -->
       <section id="services">
         <div class="section-header">
           <h2 class="section-title">Mobile Notary Services</h2>
@@ -618,12 +598,12 @@
               <li>Power of Attorney (POA)</li>
               <li>Affidavits &amp; sworn statements</li>
               <li>Medical &amp; estate planning documents</li>
-              <li>I‑9 employment verification</li>
-              <li>Real estate and financial documents (non‑lender)</li>
+              <li>I-9 employment verification</li>
+              <li>Real estate and financial documents (non-lender)</li>
             </ul>
             <div class="meta-line">Travel fees quoted upfront based on distance, time, and urgency.</div>
             <div class="pill-row">
-              <div class="pill">Same‑day appointments</div>
+              <div class="pill">Same-day appointments</div>
               <div class="pill">Evening &amp; weekend availability</div>
             </div>
           </div>
@@ -635,18 +615,17 @@
               <li>Hospitals &amp; medical centers</li>
               <li>Rehab &amp; physical therapy facilities</li>
               <li>Hospice care and nursing homes</li>
-              <li>Assisted living &amp; long‑term care</li>
+              <li>Assisted living &amp; long-term care</li>
             </ul>
             <div class="meta-line">We coordinate with staff and family to make notarization as smooth as possible.</div>
             <div class="pill-row">
-              <div class="pill">Patient‑focused bedside service</div>
+              <div class="pill">Patient-focused bedside service</div>
               <div class="pill">Discreet &amp; confidential</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- AVAILABILITY & SERVICE AREA -->
       <section id="availability">
         <div class="section-header">
           <h2 class="section-title">Availability &amp; Service Area</h2>
@@ -660,9 +639,9 @@
               <li><strong>Weekdays:</strong> 12:00 PM – 9:00 PM</li>
               <li><strong>Weekends:</strong> 9:00 AM – 4:00 PM</li>
               <li>Appointments scheduled based on availability</li>
-              <li>Same‑day service often available for urgent documents</li>
+              <li>Same-day service often available for urgent documents</li>
             </ul>
-            <div class="meta-line">Call or text 615‑484‑2552 to confirm the next available time slot.</div>
+            <div class="meta-line">Call or text 615-484-2552 to confirm the next available time slot.</div>
           </div>
 
           <div class="card">
@@ -678,7 +657,6 @@
         </div>
       </section>
 
-      <!-- PRICING & WHY DOC & SEND -->
       <section id="pricing">
         <div class="section-header">
           <h2 class="section-title">Pricing &amp; Why Clients Choose Us</h2>
@@ -711,7 +689,6 @@
         </div>
       </section>
 
-      <!-- CTA STRIP -->
       <section>
         <div class="cta-strip">
           <div>
@@ -724,13 +701,12 @@
           </div>
           <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
             <span class="icon">📞</span>
-            <span>Call or Text 615‑484‑2552</span>
+            <span>Call or Text 615-484-2552</span>
           </button>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER SEO -->
     <footer>
       <div>© <span id="year"></span> Doc &amp; Send Mobile Notary Services. All rights reserved.</div>
       <div class="seo-footer" aria-label="Nashville notary SEO footer">
