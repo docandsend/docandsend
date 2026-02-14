@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mobile Notary Nashville | We Come to You | Doc & Send</title>
+  <meta name="description" content="Reliable mobile notary in Nashville, Hermitage & Mt. Juliet. We travel to homes, hospitals, and offices. Evening & weekend appointments available. Call 615-484-2552." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="keywords" content="mobile notary Nashville, traveling notary Hermitage TN, hospital notary Mt Juliet, notary public near me, real estate closing notary, power of attorney notary, weekend notary Nashville" />
+  
+  <meta property="og:title" content="Need a Notary? We Come to You. (Nashville & Surrounding)" />
+  <meta property="og:description" content="Midday, evening, and weekend mobile notary services. We travel to homes, hospitals, and offices. Call 615-484-2552." />
+  <meta property="og:url" content="https://docandsend.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://docandsend.com/DocandSend_Logo2.png" />
+
+  <style>
+    :root {
+      --ds-navy: #0b2340;
+      --ds-gold: #c89a4b;
+      --ds-cream: #f6f3ed;
+      --ds-text: #222222;
+      --ds-muted: #555555; /* Slightly darkened for better readability */
+      --ds-radius-lg: 18px;
+      --ds-radius-md: 10px;
+      --ds-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+      --ds-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --ds-max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-size: 20px; /* Kept your preferred size */
+      font-family: var(--ds-font-sans);
+      color: var(--ds-text);
+      /* Kept your original gradient */
+      background: radial-gradient(circle at top left, #fdfaf5 0%, #f3f4f6 55%, #e5e7eb 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: var(--ds-max-width);
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .brand img {
+      display: block;
+      width: clamp(160px, 45vw, 520px);
+      max-width: 60vw;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .header-cta {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--ds-gold), #e3b86e);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(200, 154, 75, 0.45);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(200, 154, 75, 0.55);
+    }
+    
+    /* New Secondary Button Style that matches your theme */
+    .btn-secondary {
+        background: rgba(11, 35, 64, 0.05);
+        color: var(--ds-navy);
+        box-shadow: none;
+        border: 1px solid rgba(11, 35, 64, 0.1);
+    }
+    .btn-secondary:hover {
+        background: rgba(11, 35, 64, 0.1);
+        box-shadow: none;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: var(--ds-radius-lg);
+      padding: 26px 26px 24px;
+      box-shadow: var(--ds-shadow-soft);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(11, 35, 64, 0.05);
+      color: var(--ds-navy);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      margin: 0 0 12px;
+      color: var(--ds-navy);
+    }
+
+    .hero-kicker {
+      font-weight: 600;
+      color: var(--ds-muted);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-copy {
+      font-size: 0.95rem;
+      color: var(--ds-text);
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .secondary-link {
+      font-size: 0.86rem;
+      color: var(--ds-navy);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    /* Trust Badges - New Addition styled to match */
+    .hero-trust {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+        font-size: 0.8rem;
+        color: var(--ds-muted);
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        padding-top: 15px;
+    }
+    .trust-item { display: flex; align-items: center; gap: 6px; }
+    .trust-item span { color: var(--ds-gold); font-weight: bold; }
+
+    .hero-highlight {
+      background: #2f445c;
+      border-radius: var(--ds-radius-lg);
+      padding: 22px 22px 18px;
+      color: #f9fafb;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-highlight:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.12), transparent 55%);
+      opacity: 0.9;
+    }
+
+    .hero-highlight-inner { position: relative; z-index: 1; }
+    .hero-highlight-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; color: var(--ds-gold); }
+    .hero-highlight-text { font-size: 0.88rem; color: #e5e7eb; margin-bottom: 12px; }
+    .hero-highlight-hours { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px 16px; font-size: 0.85rem; }
+    
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      font-size: 0.76rem;
+      margin-top: 14px;
+    }
+
+    section { margin-bottom: 50px; }
+
+    .section-header { margin-bottom: 20px; text-align: center; }
+    .section-title { font-size: 1.6rem; font-weight: 700; color: var(--ds-navy); margin: 0 0 8px; }
+    .section-tagline { font-size: 1rem; color: var(--ds-muted); }
+
+    .grid-2 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    /* NEW: 3-Column Grid for Process */
+    .grid-3 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--ds-radius-md);
+      padding: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: 0 10px 22px rgba(15,23,42,0.05);
+      transition: transform 0.2s ease;
+      height: 100%;
+    }
+    
+    /* Figma-style hover effect */
+    .card:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(15,23,42,0.1); }
+
+    .card-title { font-size: 1.1rem; font-weight: 700; color: var(--ds-navy); margin-bottom: 6px; }
+    .card-sub { font-size: 0.9rem; color: var(--ds-muted); margin-bottom: 12px; font-style: italic; }
+    .card ul { padding-left: 18px; margin: 6px 0 10px; font-size: 0.92rem; }
+    .card ul li + li { margin-top: 4px; }
+    
+    /* Process Step Styles (New but matching) */
+    .step-card { text-align: center; padding: 24px 16px; }
+    .step-num {
+        background: var(--ds-navy);
+        color: white;
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 12px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(11, 35, 64, 0.3);
+    }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 0.78rem; }
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(11, 35, 64, 0.06);
+      color: var(--ds-navy);
+      font-weight: 600;
+    }
+
+    .cta-strip {
+      background: #0b2340;
+      border-radius: var(--ds-radius-lg);
+      padding: 24px;
+      color: #f9fafb;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 18px 42px rgba(15,23,42,0.4);
+    }
+    .cta-strip-text { font-size: 1.1rem; }
+
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding-top: 24px;
+      font-size: 0.8rem;
+      color: var(--ds-muted);
+      text-align: center;
+    }
+    
+    .seo-footer { margin-top: 12px; font-size: 0.75rem; opacity: 0.8; line-height: 1.8; }
+    .seo-footer span { display: inline-block; margin: 0 6px; }
+    .legal-line { margin-top: 16px; font-style: italic; }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      header { flex-direction: column; text-align: center; }
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-highlight { order: -1; margin-bottom: 20px; }
+      .grid-3 { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      body { font-size: 18px; }
+      .hero-title { font-size: 1.7rem; }
+      .page { padding-inline: 16px; }
+      .cta-strip { flex-direction: column; text-align: center; }
+      .grid-2 { grid-template-columns: minmax(0, 1fr); }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Doc & Send Mobile Notary Services",
+    "image": "https://docandsend.com/DocandSend_Logo2.png",
+    "url": "https://docandsend.com/",
+    "telephone": "+1-615-484-2552",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nashville",
+      "addressRegion": "TN",
+      "postalCode": "37201",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Nashville", "Hermitage", "Mt. Juliet", "Davidson County", "Antioch", "Donelson"],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.1627,
+      "longitude": -86.7816
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "16:00" }
+    ],
+    "description": "Mobile notary public offering midday, evening, weekend and hospital notary services in Nashville & Davidson County."
+  }
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <img src="DocandSend_Logo2.png" alt="Doc & Send Mobile Notary logo" />
+      </div>
+
+      <div class="header-cta">
+        <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
+          <span class="icon">📞</span>
+          <span>615-484-2552 • Call Now</span>
+        </button>
+
+        <button class="btn-primary btn-secondary" onclick="window.location.href='https://calendly.com/youroneclickhome/serviceconsult'">
+          <span class="icon">📅</span>
+          <span>Schedule Online</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <div class="eyebrow">
+            <span>📍 Nashville & Davidson County</span>
+          </div>
+          
+          <h1 class="hero-title">Mobile Notary Public: <br>We Come To You.</h1>
+          
+          <div class="hero-kicker">Midday, evening, and weekend appointments.</div>
+          <p class="hero-copy">
+            Skip the traffic. We travel to your home, office, hospital, or care facility for time-sensitive documents and powers of attorney.
+          </p>
+          
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
+              <span class="icon">📲</span>
+              <span>Call or Text 615-484-2552</span>
+            </button>
+            <a class="secondary-link" href="#pricing">See Pricing ↓</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item"><span>✓</span> Licensed & Bonded</div>
+            <div class="trust-item"><span>✓</span> Background Checked</div>
+            <div class="trust-item"><span>✓</span> Same-Day Service</div>
+          </div>
+        </div>
+
+        <aside class="hero-highlight" aria-label="Availability and service area">
+          <div class="hero-highlight-inner">
+            <div class="hero-highlight-title">🕒 Today's Availability</div>
+            <p class="hero-highlight-text">
+              Flexible appointments scheduled around your needs.
+            </p>
+            <div class="hero-highlight-hours">
+              <div><strong>Weekdays:</strong><br>12:00 PM – 9:00 PM</div>
+              <div><strong>Weekends:</strong><br>9:00 AM – 4:00 PM</div>
+            </div>
+            <div class="badge-pill">
+              <span>🚑</span>
+              <span>Urgent Hospital Visits Prioritized</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <div class="section-header">
+           <h2 class="section-title">How It Works</h2>
+           <p class="section-tagline">Simple, secure, and convenient.</p>
+        </div>
+        <div class="grid-3">
+           <div class="card step-card">
+              <div class="step-num">1</div>
+              <div class="card-title">Contact Us</div>
+              <div class="card-sub">Call, text, or book online.</div>
+              <p style="font-size: 0.9rem;">We confirm the location and provide an upfront price quote.</p>
+           </div>
+           <div class="card step-card">
+              <div class="step-num">2</div>
+              <div class="card-title">We Travel</div>
+              <div class="card-sub">We meet you where you are.</div>
+              <p style="font-size: 0.9rem;">Home, office, hospital, or coffee shop in the Nashville area.</p>
+           </div>
+           <div class="card step-card">
+              <div class="step-num">3</div>
+              <div class="card-title">We Notarize</div>
+              <div class="card-sub">Quick & Professional.</div>
+              <p style="font-size: 0.9rem;">We verify IDs, witness signatures, and stamp your documents.</p>
+           </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-header">
+          <h2 class="section-title">Services</h2>
+          <p class="section-tagline">Specialized support for medical & legal documents.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">General Mobile Notary</div>
+            <div class="card-sub">At your home or office.</div>
+            <ul>
+              <li>Power of Attorney (POA)</li>
+              <li>Affidavits & sworn statements</li>
+              <li>I-9 employment verification</li>
+              <li>Apostille & document authentication</li>
+            </ul>
+            <div class="pill-row">
+              <div class="pill">Hermitage</div>
+              <div class="pill">Mt. Juliet</div>
+              <div class="pill">Donelson</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Hospital & Facility Notary</div>
+            <div class="card-sub">Bedside service for patients.</div>
+            <ul>
+              <li>Medical Power of Attorney</li>
+              <li>Healthcare Directives / Living Wills</li>
+              <li>Rehab & Hospice Facilities</li>
+              <li>Assisted Living & Nursing Homes</li>
+            </ul>
+            <div class="pill-row">
+              <div class="pill">Patient-focused</div>
+              <div class="pill">Confidential</div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-title">Real Estate Closings</div>
+            <div class="card-sub">For buyers, sellers & agents.</div>
+            <ul>
+              <li>Closing documents</li>
+              <li>Property deed notarization</li>
+              <li>Mortgage & refinance docs</li>
+              <li>Title transfer paperwork</li>
+            </ul>
+            <div class="pill-row">
+               <div class="pill">Same-day available</div>
+            </div>
+          </div>
+
+          <div class="card">
+             <div class="card-title">Where We Travel</div>
+             <div class="card-sub">30-mile radius from Downtown.</div>
+             <p style="font-size: 0.9rem; margin-top: 5px;">
+               Serving Nashville, Hermitage, Mt. Juliet, Antioch, Madison, and Donelson.
+             </p>
+             <div class="pill-row" style="margin-top: 15px;">
+               <div class="pill">Homes</div>
+               <div class="pill">Offices</div>
+               <div class="pill">Hospitals</div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="section-header">
+          <h2 class="section-title">Transparent Pricing</h2>
+          <p class="section-tagline">Know the cost before we book.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Notarization Fee</div>
+            <p style="font-size: 1.4rem; font-weight: 700; color: var(--ds-gold); margin: 5px 0;">$5.00 / signature</p>
+            <p style="font-size: 0.9rem;">State regulated fee for Tennessee.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Travel Fee</div>
+            <p style="font-size: 1.4rem; font-weight: 700; color: var(--ds-gold); margin: 5px 0;">Starts at $35</p>
+            <p style="font-size: 0.9rem;">Varies by distance, time of day, and location type (e.g., hospital parking).</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta-strip">
+          <div>
+            <div class="cta-strip-text">
+              Need a notary today? <strong>Call or text now to check availability.</strong>
+            </div>
+            <div class="cta-strip-sub">
+              Serving Nashville & Davidson County — homes, offices, and hospitals.
+            </div>
+          </div>
+          <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
+            <span class="icon">📞</span>
+            <span>Call or Text 615-484-2552</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Doc & Send Mobile Notary Services. All rights reserved.</div>
+      <div class="seo-footer" aria-label="Nashville notary SEO keywords">
+        <span>Mobile Notary Nashville</span>•
+        <span>Mobile Notary Hermitage TN</span>•
+        <span>Mobile Notary Mt. Juliet</span>•
+        <span>Hospital Notary Nashville</span>•
+        <span>Weekend Notary Davidson County</span>•
+        <span>Notary Near Me Nashville TN</span>•
+        <span>Apostille Services Nashville</span>
+      </div>
+      <div class="legal-line">
+        Disclaimer: I am not an attorney licensed to practice law in the state of Tennessee, and I may not give legal advice or accept fees for legal advice.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/696d57412bf6a3197bbcbe0a/1jf9hpm4g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html>
