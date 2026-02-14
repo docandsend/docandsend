@@ -1,0 +1,812 @@
+docandsend
+docandsend
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+docandsend
+/index.html
+Go to file
+t
+docandsend
+docandsend
+Revert index.html to previous version
+7965b0a
+ · 
+19 minutes ago
+
+Code
+
+Blame
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <title>Mobile Notary Service Nashville | Hermitage, Mt. Juliet & Davidson County | Doc & Send Notary Public</title>
+    <meta name="description" content="Professional mobile notary service in Nashville, Hermitage, Mt. Juliet & 30-mile radius. Document notarization, apostille services, real estate closings, healthcare documents. Evening & weekend availability. Call 615-484-2552." />  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO keywords -->
+    <meta name="keywords" content="mobile notary service Nashville, mobile notary Hermitage TN, mobile notary Mt Juliet, traveling notary public, document notarization, apostille services, notary near me Nashville, real estate closings, healthcare documents, power of attorney notary, evening notary, weekend notary, hospital notary, 30 mile radius Nashville, notary public Davidson County" />
+  <!-- Open Graph for sharing -->
+  <meta property="og:title" content="Doc &amp; Send Mobile Notary – Nashville, TN" />
+  <meta property="og:description" content="Midday, evening, weekend and hospital mobile notary services in Nashville &amp; Davidson County. Call or text 615-484-2552 to schedule." />
+  <meta property="og:url" content="https://docandsend.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://docandsend.com/path-to-your-logo.jpg" />
+
+  <style>
+    :root {
+      --ds-navy: #0b2340;
+      --ds-gold: #c89a4b;
+      --ds-cream: #f6f3ed;
+      --ds-text: #222222;
+      --ds-muted: #6c6c6c;
+      --ds-radius-lg: 18px;
+      --ds-radius-md: 10px;
+      --ds-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+      --ds-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --ds-max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-size: 22.4px;
+      font-family: var(--ds-font-sans);
+      color: var(--ds-text);
+      background: radial-gradient(circle at top left, #fdfaf5 0%, #f3f4f6 55%, #e5e7eb 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: var(--ds-max-width);
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /*
+      LOGO RESPONSIVE REQUIREMENT:
+      - Keep at least 20% open space on each side of the logo across devices.
+      - Enforced by max-width: 60vw (60% of viewport width).
+      - clamp() prevents being too small or too large:
+          min: 160px
+          preferred: 45vw (scales smoothly on mid-sized screens)
+          max: 520px (caps on large desktops)
+      - height auto preserves aspect ratio.
+    */
+    .brand img {
+      display: block;
+      width: clamp(160px, 45vw, 520px);
+      max-width: 60vw;     /* ensures ~>=20% space on each side */
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ds-navy);
+    }
+
+    .brand-subtitle {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ds-muted);
+    }
+
+    .header-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transform: scale(1.3);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .phone-label {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ds-muted);
+      font-size: 0.78rem;
+    }
+
+    .phone-number {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ds-navy);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--ds-gold), #e3b86e);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(200, 154, 75, 0.45);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(200, 154, 75, 0.55);
+      background: linear-gradient(135deg, #e3b86e, var(--ds-gold));
+    }
+
+    .btn-primary span.icon {
+      font-size: 1.1rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: var(--ds-radius-lg);
+      padding: 26px 26px 24px;
+      box-shadow: var(--ds-shadow-soft);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(11, 35, 64, 0.05);
+      color: var(--ds-navy);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      margin: 0 0 10px;
+      color: var(--ds-navy);
+    }
+
+    .hero-kicker {
+      font-weight: 600;
+      color: var(--ds-muted);
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-copy {
+      font-size: 0.95rem;
+      color: var(--ds-text);
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .secondary-link {
+      font-size: 0.86rem;
+      color: var(--ds-navy);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      font-size: 0.8rem;
+      color: var(--ds-muted);
+      margin-top: 8px;
+    }
+
+    .hero-meta strong {
+      color: var(--ds-navy);
+      font-weight: 600;
+    }
+
+    .hero-highlight {
+      background: #2f445c;
+      border-radius: var(--ds-radius-lg);
+      padding: 22px 22px 18px;
+      color: #f9fafb;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-highlight:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.12), transparent 55%);
+      opacity: 0.9;
+    }
+
+    .hero-highlight-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-highlight-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .hero-highlight-text {
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight-hours {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 4px 16px;
+      font-size: 0.82rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      font-size: 0.76rem;
+      margin-top: 10px;
+    }
+
+    section { margin-bottom: 40px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ds-navy);
+    }
+
+    .section-tagline {
+      font-size: 0.86rem;
+      color: var(--ds-muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--ds-radius-md);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: 0 10px 22px rgba(15,23,42,0.08);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ds-navy);
+      margin-bottom: 4px;
+    }
+
+    .card-sub {
+      font-size: 0.86rem;
+      color: var(--ds-muted);
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 6px 0 10px;
+      font-size: 0.9rem;
+    }
+
+    .card ul li + li { margin-top: 2px; }
+
+    .meta-line {
+      font-size: 0.8rem;
+      color: var(--ds-muted);
+      margin-top: 4px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.78rem;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(11, 35, 64, 0.06);
+      color: var(--ds-navy);
+    }
+
+    .cta-strip {
+      background: #0b2340;
+      border-radius: var(--ds-radius-lg);
+      padding: 18px 18px 16px;
+      color: #f9fafb;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 18px 42px rgba(15,23,42,0.65);
+    }
+
+    .cta-strip-text { font-size: 0.96rem; }
+    .cta-strip-text strong { font-weight: 600; }
+
+    .cta-strip-sub {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      margin-top: 2px;
+    }
+
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding-top: 18px;
+      font-size: 0.78rem;
+      color: var(--ds-muted);
+    }
+
+    .seo-footer {
+      margin-top: 6px;
+      font-size: 0.78rem;
+    }
+
+    .seo-footer span {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .legal-line { margin-top: 10px; }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      .header-cta {
+        align-items: center;
+        width: 100%;
+        max-width: 520px;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-highlight { order: -1; }
+      .grid-2 { grid-template-columns: minmax(0, 1fr); }
+
+      /* Keep the 20% side-space rule while dialing down the max logo size slightly */
+      .brand img {
+        width: clamp(150px, 55vw, 460px);
+        max-width: 60vw;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body { font-size: 18px; }
+      .hero-title { font-size: 1.7rem; }
+      .page { padding-inline: 16px; }
+      .cta-strip { align-items: flex-start; }
+
+      /* FIX: Remove scale transform that can cause overflow on small screens */
+      .header-cta { transform: scale(1); }
+
+      /* Logo still respects 60vw => ~20% side margins */
+      .brand img {
+        width: clamp(140px, 60vw, 360px);
+        max-width: 60vw;
+      }
+
+      .phone-number { font-size: 1.3rem; }
+      .btn-primary { min-height: 44px; padding: 8px 18px; font-size: 0.88rem; }
+    }
+
+    @media (max-width: 390px) {
+      body { font-size: 16px; }
+      .hero-title { font-size: 1.5rem; }
+
+      .brand img {
+        width: clamp(130px, 60vw, 320px);
+        max-width: 60vw;
+      }
+
+      .btn-primary { padding: 6px 14px; font-size: 0.82rem; gap: 6px; }
+      .phone-label { font-size: 0.7rem; }
+    }
+  </style>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Doc & Send Mobile Notary Services",
+    "image": "https://docandsend.com/path-to-your-logo.jpg",
+    "@id": "https://docandsend.com/",
+    "url": "https://docandsend.com/",
+    "telephone": "+1-615-484-2552",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nashville",
+      "addressRegion": "TN",
+      "postalCode": "37201",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      { "@type": "Place", "name": "Nashville, Tennessee" },
+  { "@type": "Place", "name": "Davidson County, Tennessee" },
+  { "@type": "Place", "name": "Hermitage, Tennessee" },
+  { "@type": "Place", "name": "Mt. Juliet, Tennessee" },
+  { "@type": "Place", "name": "Antioch, Tennessee" },
+  { "@type": "Place", "name": "Madison, Tennessee" }
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.1627,
+      "longitude": -86.7816
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "12:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "16:00"
+      }
+    ],
+    "serviceArea": {
+      "@type": "AdministrativeArea",
+      "name": "Nashville & Davidson County"
+    },
+    "description": "Mobile notary public offering midday, evening, weekend and hospital notary services in Nashville & Davidson County."
+  }
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <!-- IMPORTANT:
+             Put DocandSend_Logo2.png in the SAME folder as this HTML file (repo root if using GitHub Pages). -->
+        <img src="DocandSend_Logo2.png" alt="Doc &amp; Send Mobile Notary logo" />
+      </div>
+
+      <div class="header-cta">
+        <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
+          <span class="icon">📞</span>
+          <span>615-484-2552 • Call Now</span>
+        </button>
+
+        <button class="btn-primary" onclick="window.location.href='https://calendly.com/youroneclickhome/serviceconsult'">
+          <span class="icon">📅</span>
+          <span>Schedule an Appointment</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <div class="eyebrow">
+            <span>On-Call Mobile Notary</span>
+            <span>• Nashville &amp; Davidson County</span>
+          </div>
+          <h1 class="hero-title">Doc &amp; Send – Mobile Notary Public</h1>
+          <div class="hero-kicker">Midday, evening, and weekend mobile notarizations — including hospital visits.</div>
+          <p class="hero-copy">
+            Professional Tennessee notary public traveling to your home, office, or medical facility for time-sensitive documents, powers of attorney, and more.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
+              <span class="icon">📲</span>
+              <span>Call or Text 615-484-2552</span>
+            </button>
+            <a class="secondary-link" href="#availability">View today’s availability ↓</a>
+          </div>
+          <div class="hero-meta">
+            <span><strong>Same-day</strong> appointments during listed hours.</span>
+      <span>Mobile notary service for Nashville, Hermitage, Mt. Juliet & 30-mile radius. Traveling notary public serving homes, offices, hospitals & care facilities.</span>          </div>
+        </div>
+
+        <aside class="hero-highlight" aria-label="Availability and service area">
+          <div class="hero-highlight-inner">
+            <div class="hero-highlight-title">When we’re available</div>
+            <p class="hero-highlight-text">
+              Flexible midday, after-work, and weekend appointments scheduled around your needs.
+            </p>
+            <div class="hero-highlight-hours">
+              <div><strong>Weekdays:</strong> 12:00 PM – 9:00 PM</div>
+              <div><strong>Weekends:</strong> 9:00 AM – 4:00 PM</div>
+              <div>Same-day slots based on availability.</div>
+              <div>Call or text to confirm today.</div>
+            </div>
+            <div class="badge-pill">
+              <span>📍</span>
+              <span>Serving Nashville &amp; Davidson County</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="services">
+        <div class="section-header">
+          <h2 class="section-title">Mobile Notary Services</h2>
+          <p class="section-tagline">We come to your home, office, hospital, or care facility.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">General Mobile Notary</div>
+            <div class="card-sub">Professional mobile notarizations at your location in Nashville &amp; Davidson County.</div>
+            <ul>
+              <li>Power of Attorney (POA)</li>
+              <li>Affidavits &amp; sworn statements</li>
+              <li>Medical &amp; estate planning documents</li>
+              <li>I-9 employment verification</li>
+              <li>Real estate and financial documents (non-lender)</li>
+                      <li>Apostille & document authentication services</li>
+            </ul>
+            <div class="meta-line">Travel fees quoted upfront based on distance, time, and urgency.</div>
+            <div class="pill-row">
+              <div class="pill">Same-day appointments</div>
+              <div class="pill">Evening &amp; weekend availability</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Hospital &amp; Facility Notary</div>
+            <div class="card-sub">Specialized bedside notarization for patients and families.</div>
+            <ul>
+              <li>Hospitals &amp; medical centers</li>
+              <li>Rehab &amp; physical therapy facilities</li>
+              <li>Hospice care and nursing homes</li>
+              <li>Assisted living &amp; long-term care</li>
+            </ul>
+            <div class="meta-line">We coordinate with staff and family to make notarization as smooth as possible.</div>
+            <div class="pill-row">
+              <div class="pill">Patient-focused bedside service</div>
+              <div class="pill">Discreet &amp; confidential</div>
+            </div>
+          </div>
+        </div>
+
+            <div class="card">
+      <div class="card-title">Real Estate Closings & Legal Documents</div>
+      <div class="card-sub">Professional notary services for property transactions and legal paperwork.</div>
+      <ul>
+        <li>Real estate closing documents</li>
+        <li>Property deed notarization</li>
+        <li>Mortgage & refinance documents</li>
+        <li>Title transfer paperwork</li>
+        <li>Lease agreements & contracts</li>
+      </ul>
+      <div class="meta-line">Mobile service for home buyers, sellers & real estate professionals.</div>
+      <div class="pill-row">
+        <div class="pill">Same-day available</div>
+        <div class="pill">Mobile closings</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Healthcare & Medical Documents</div>
+      <div class="card-sub">Specialized notary services for medical and healthcare documentation.</div>
+      <ul>
+        <li>Medical power of attorney</li>
+        <li>Healthcare directives & living wills</li>
+        <li>HIPAA authorization forms</li>
+        <li>Patient consent documents</li>
+        <li>Medical records release forms</li>
+      </ul>
+      <div class="meta-line">Hospital bedside service available for urgent medical documents.</div>
+      <div class="pill-row">
+        <div class="pill">Patient-focused</div>
+        <div class="pill">Confidential</div>
+      </div>
+    </div>
+      </section>
+
+      <section id="availability">
+        <div class="section-header">
+          <h2 class="section-title">Availability &amp; Service Area</h2>
+          <p class="section-tagline">Local Nashville mobile notary serving Metro &amp; surrounding communities.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">When we’re available</div>
+            <ul>
+              <li><strong>Weekdays:</strong> 12:00 PM – 9:00 PM</li>
+              <li><strong>Weekends:</strong> 9:00 AM – 4:00 PM</li>
+              <li>Appointments scheduled based on availability</li>
+              <li>Same-day service often available for urgent documents</li>
+            </ul>
+            <div class="meta-line">Call or text 615-484-2552 to confirm the next available time slot.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Where we travel</div>
+            <ul>
+        <li>30-mile radius from downtown Nashville including Davidson County</li>
+                      <li><strong>Specializing in Hermitage & Mt. Juliet</strong> — Priority service areas</li><li>Homes, apartments &amp; offices</li>
+              <li>Hospitals, rehab, hospice &amp; nursing facilities</li>
+              <li>Public locations such as banks or coffee shops by request</li>
+            </ul>
+            <div class="meta-line">Travel fees vary by distance, time of day, and facility requirements.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="section-header">
+          <h2 class="section-title">Pricing &amp; Why Clients Choose Us</h2>
+          <p class="section-tagline">Transparent Tennessee notary fees with upfront travel quotes.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Pricing</div>
+            <ul>
+              <li><strong>Tennessee notarization fee:</strong> $5 per signature</li>
+              <li>Travel, hospital, evening, and weekend fees apply</li>
+              <li>Total cost disclosed before scheduling your appointment</li>
+              <li>Itemized receipt available upon request</li>
+            </ul>
+            <div class="meta-line">No surprise charges — you approve the full price before we book.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Why Doc &amp; Send?</div>
+            <ul>
+              <li>Flexible midday, evening &amp; weekend availability</li>
+              <li>Mobile service — we come to you</li>
+              <li>Professional, punctual, and confidential service</li>
+              <li>Experienced with hospital and facility notarizations</li>
+              <li>Serving Metro Nashville and surrounding communities</li>
+            </ul>
+            <div class="meta-line">Focused on clear communication, reliability, and respectful service for every signing.</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta-strip">
+          <div>
+            <div class="cta-strip-text">
+              Need a notary today? <strong>Call or text now to check availability.</strong>
+            </div>
+            <div class="cta-strip-sub">
+              Mobile notary for Nashville &amp; Davidson County — homes, offices, hospitals, rehab and hospice.
+            </div>
+          </div>
+          <button class="btn-primary" onclick="window.location.href='tel:16154842552'">
+            <span class="icon">📞</span>
+            <span>Call or Text 615-484-2552</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Doc &amp; Send Mobile Notary Services. All rights reserved.</div>
+      <div class="seo-footer" aria-label="Nashville notary SEO footer">
+        <span>Mobile Notary Nashville</span>•
+        <span>Mobile Notary Davidson County</span>•
+        <span>Hospital Notary Nashville</span>•
+        <span>Rehab &amp; Hospice Notary Nashville</span>•
+        <span>Evening Notary Nashville</span>•
+        <span>Weekend Notary Davidson County</span>•
+        <span>Notary Near Me Nashville TN</span>•
+        <span>Nashville Mobile Notary Public</span>
+              <span>Mobile Notary Hermitage TN</span>•
+      <span>Mobile Notary Mt. Juliet TN</span>•
+      <span>Apostille Services Nashville</span>•
+      <span>Real Estate Closings Notary</span>•
+      <span>Healthcare Documents Notary</span>•
+      <span>Traveling Notary Public Nashville</span>•
+      <span>30 Mile Radius Nashville Notary</span>
+      </div>
+      <div class="legal-line">
+        Tennessee notarization fee is $5 per signature. Additional mobile travel, hospital, evening, and weekend fees apply; total cost is disclosed before scheduling.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/696d57412bf6a3197bbcbe0a/1jf9hpm4g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
