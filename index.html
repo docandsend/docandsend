@@ -579,6 +579,34 @@
       .price-item { flex-direction: column; gap: 2px; }
 
     }
+/* Ensure Lisa image width matches "Meet Your Notary" heading */
+
+.notary-header-wrapper {
+  display: inline-block;  /* width driven by the heading text */
+  text-align: left;       /* optional: keeps alignment clean */
+}
+
+.notary-header-wrapper .section-title {
+  margin: 0;
+  padding: 0;
+}
+
+.lisa-image {
+  width: 100%;            /* matches the width of the wrapper (same as text) */
+  height: auto;           /* preserves aspect ratio */
+  display: block;
+  margin-top: 0.75rem;    /* space between text and image */
+}
+
+/* Keep centered on mobile/tablet */
+@media (max-width: 880px) {
+  .section-header {
+    text-align: center;
+  }
+  .notary-header-wrapper {
+    text-align: center;
+  }
+}
 
   </style>
 
@@ -759,14 +787,16 @@
       </section>
 
       <section id="about">
+  <div class="section-header">
+    <div class="notary-header-wrapper">
+      <h2 class="section-title">Meet Your Notary</h2>
+      <img src="Lisa_Midshot.jpeg" alt="Lisa - Mobile Notary Nashville" class="lisa-image">
+    </div>
+    <p class="section-tagline">Accuracy, Professionalism, and Confidentiality.</p>
+  </div>
+  <!-- ... existing card content ... -->
+</section>
 
-        <div class="section-header">
-
-           <h2 class="section-title">Meet Your Notary</h2>
-
-           <p class="section-tagline">Accuracy, Professionalism, and Confidentiality.</p>
-
-        </div>
 
         <div class="card" style="border-left: 4px solid var(--ds-gold);">
 
