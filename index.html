@@ -1103,6 +1103,278 @@
 
       </section>
 
+      <!-- FEE CALCULATOR SECTION -->
+<section id="calculator" style="background: #f8f9fa; padding: 60px 20px;">
+    <div class="section-header">
+        <h2 class="section-title">Calculate Your Fee</h2>
+        <p class="section-tagline">Get an instant estimate based on your needs.</p>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="padding: 30px;">
+            
+            <!-- Service Details -->
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e3a5f;">
+                    Number of Signatures
+                </label>
+                <input type="number" id="calc-signatures" min="1" value="1" 
+                    style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;">
+                <small style="color: #666;">$5 per signature (TN Regulated)</small>
+            </div>
+
+            <!-- Location for Distance Calculation -->
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e3a5f;">
+                    Service Location Address
+                </label>
+                <input type="text" id="calc-address" placeholder="Enter full address (e.g., 123 Main St, Nashville, TN 37201)" 
+                    style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px;">
+                <small style="color: #666;">We'll calculate distance from downtown Nashville. Within 30 miles: $40 flat. Beyond 30 miles: $40 + $0.45/mile</small>
+                <div id="distance-result" style="margin-top: 10px; padding: 10px; background: #e3f2fd; border-radius: 6px; display: none;">
+                    <strong style="color: #1976d2;">Distance: <span id="distance-miles"></span> miles from downtown Nashville</strong>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #1e3a5f;">
+                    Additional Services
+                </label>
+                
+                <div style="margin-bottom: 10px;">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="calc-evening" value="25" 
+                            style="width: 20px; height: 20px; margin-right: 10px; cursor: pointer;">
+                        <span>Evening Service (After 6 PM) - <strong>+$25</strong></span>
+                    </label>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="calc-weekend" value="25" 
+                            style="width: 20px; height: 20px; margin-right: 10px; cursor: pointer;">
+                        <span>Weekend Appointment - <strong>+$25</strong></span>
+                    </label>
+                </div>
+
+                <div style="margin-bottom: 10px;">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="calc-hospital" value="25" 
+                            style="width: 20px; height: 20px; margin-right: 10px; cursor: pointer;">
+                        <span>Hospital/Facility Visit - <strong>+$25</strong></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <button id="calc-button" onclick="calculateFee()" 
+                style="width: 100%; padding: 15px; background: linear-gradient(135deg, #C9A961 0%, #9d7d3b 100%); 
+                color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: 600; 
+                cursor: pointer; margin-bottom: 20px; transition: transform 0.2s;">
+                Calculate Total Fee
+            </button>
+
+            <!-- Results Display -->
+            <div id="calc-results" style="display: none; padding: 25px; background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%); 
+                border-radius: 12px; color: white;">
+                
+                <h3 style="margin: 0 0 15px 0; font-size: 24px;">Your Estimated Total</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>Notarization (<span id="result-sig-count">0</span> signatures × $5)</span>
+                        <span id="result-notarization">$0</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>Mobile Travel Fee</span>
+                        <span id="result-travel">$40</span>
+                    </div>
+                    <div id="result-extra-distance-row" style="display: none; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Extra Distance Fee (<span id="result-extra-miles"></span> miles × $0.45)</span>
+                            <span id="result-extra-distance">$0</span>
+                        </div>
+                    </div>
+                    <div id="result-additional-row" style="display: none;">
+                        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                            <span>Additional Services</span>
+                            <span id="result-additional">$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 15px 0; border-top: 2px solid rgba(255,255,255,0.4); 
+                    font-size: 28px; font-weight: 700;">
+                    <span>TOTAL</span>
+                    <span id="result-total" style="color: #C9A961;">$0</span>
+                </div>
+
+                <p style="margin: 15px 0 0 0; font-size: 14px; opacity: 0.9; text-align: center;">
+                    📝 This is an estimate. Final price will be confirmed before scheduling.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CALCULATOR JAVASCRIPT -->
+<script>
+// Downtown Nashville coordinates (approx. Public Square)
+const DOWNTOWN_NASH = { lat: 36.1627, lng: -86.7816 };
+const BASE_TRAVEL_FEE = 40;
+const FREE_RADIUS_MILES = 30;
+const PER_MILE_RATE = 0.45;
+
+// Calculate distance between two coordinates using Haversine formula
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 3959; // Earth's radius in miles
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    return R * c;
+}
+
+// Geocode address using Nominatim (OpenStreetMap)
+async function geocodeAddress(address) {
+    try {
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?` + new URLSearchParams({
+            q: address,
+            format: 'json',
+            limit: 1,
+            countrycodes: 'us'
+        }), {
+            headers: {
+                'User-Agent': 'DocAndSend Mobile Notary Fee Calculator'
+            }
+        });
+        const data = await response.json();
+        if (data && data.length > 0) {
+            return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+        }
+        return null;
+    } catch (error) {
+        console.error('Geocoding error:', error);
+        return null;
+    }
+}
+
+async function calculateFee() {
+    // Get input values
+    const signatures = parseInt(document.getElementById('calc-signatures').value) || 1;
+    const address = document.getElementById('calc-address').value.trim();
+    const evening = document.getElementById('calc-evening').checked;
+    const weekend = document.getElementById('calc-weekend').checked;
+    const hospital = document.getElementById('calc-hospital').checked;
+
+    // Calculate base fees
+    let notarizationFee = signatures * 5;
+    let travelFee = BASE_TRAVEL_FEE;
+    let extraDistanceFee = 0;
+    let distance = 0;
+
+    // Calculate distance if address provided
+    if (address) {
+        document.getElementById('calc-button').textContent = 'Calculating distance...';
+        document.getElementById('calc-button').disabled = true;
+        
+        const coords = await geocodeAddress(address);
+        if (coords) {
+            distance = calculateDistance(
+                DOWNTOWN_NASH.lat, DOWNTOWN_NASH.lng,
+                coords.lat, coords.lng
+            );
+            
+            // Show distance
+            document.getElementById('distance-miles').textContent = distance.toFixed(1);
+            document.getElementById('distance-result').style.display = 'block';
+            
+            // Calculate extra distance fee if beyond 30 miles
+            if (distance > FREE_RADIUS_MILES) {
+                const extraMiles = distance - FREE_RADIUS_MILES;
+                extraDistanceFee = extraMiles * PER_MILE_RATE;
+            }
+        } else {
+            alert('Could not find that address. Please check and try again, or leave blank for standard Nashville area pricing.');
+            document.getElementById('calc-button').textContent = 'Calculate Total Fee';
+            document.getElementById('calc-button').disabled = false;
+            return;
+        }
+        
+        document.getElementById('calc-button').textContent = 'Calculate Total Fee';
+        document.getElementById('calc-button').disabled = false;
+    } else {
+        // Hide distance result if no address
+        document.getElementById('distance-result').style.display = 'none';
+    }
+
+    // Calculate additional services
+    let additionalFees = 0;
+    if (evening) additionalFees += 25;
+    if (weekend) additionalFees += 25;
+    if (hospital) additionalFees += 25;
+
+    // Calculate total
+    const total = notarizationFee + travelFee + extraDistanceFee + additionalFees;
+
+    // Display results
+    document.getElementById('result-sig-count').textContent = signatures;
+    document.getElementById('result-notarization').textContent = '$' + notarizationFee;
+    document.getElementById('result-travel').textContent = '$' + travelFee;
+    
+    // Show/hide extra distance row
+    if (extraDistanceFee > 0) {
+        const extraMiles = distance - FREE_RADIUS_MILES;
+        document.getElementById('result-extra-miles').textContent = extraMiles.toFixed(1);
+        document.getElementById('result-extra-distance').textContent = '$' + extraDistanceFee.toFixed(2);
+        document.getElementById('result-extra-distance-row').style.display = 'block';
+    } else {
+        document.getElementById('result-extra-distance-row').style.display = 'none';
+    }
+    
+    // Show/hide additional services row
+    if (additionalFees > 0) {
+        document.getElementById('result-additional').textContent = '$' + additionalFees;
+        document.getElementById('result-additional-row').style.display = 'block';
+    } else {
+        document.getElementById('result-additional-row').style.display = 'none';
+    }
+
+    document.getElementById('result-total').textContent = '$' + total.toFixed(2);
+    document.getElementById('calc-results').style.display = 'block';
+
+    // Smooth scroll to results
+    document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Add hover effect to button
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('calc-button');
+    if (button) {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    }
+
+    // Trigger calculation on Enter in address field
+    const addressField = document.getElementById('calc-address');
+    if (addressField) {
+        addressField.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateFee();
+            }
+        });
+    }
+});
+</script>
+
       <section>
 
         <div class="cta-strip">
