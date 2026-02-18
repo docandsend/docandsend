@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doc and Send — SEO Strategy Session Summary | February 18, 2026</title>
+  <style>
+    @media print {
+      body { font-size: 11pt; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+      h1, h2, h3 { page-break-after: avoid; }
+      table { page-break-inside: avoid; }
+    }
+    :root {
+      --navy: #0b2340;
+      --gold: #c89a4b;
+      --cream: #f6f3ed;
+      --text: #222;
+      --muted: #555;
+      --green: #22c55e;
+      --red: #ef4444;
+      --amber: #f59e0b;
+      --blue: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #f9fafb;
+      line-height: 1.7;
+      padding: 0;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 30px 60px; }
+    .header-bar {
+      background: linear-gradient(135deg, var(--navy), #1a3a5c);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .header-bar h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    .header-bar .subtitle { color: var(--gold); font-size: 1.1rem; font-weight: 600; }
+    .header-bar .date { opacity: 0.7; font-size: 0.9rem; margin-top: 6px; }
+    .meta-bar {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      background: white; border: 1px solid #e5e7eb;
+      border-radius: 10px; padding: 16px 20px;
+      margin: -20px auto 30px; max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      justify-content: center;
+    }
+    .meta-item { text-align: center; }
+    .meta-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+    .meta-item .value { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+    h2 {
+      font-size: 1.35rem; color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px; margin: 40px 0 16px;
+    }
+    h3 { font-size: 1.1rem; color: var(--navy); margin: 24px 0 10px; }
+    p, li { font-size: 0.92rem; color: var(--text); }
+    p { margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.88rem; }
+    th { background: var(--navy); color: white; padding: 10px 14px; text-align: left; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { padding: 10px 14px; border-bottom: 1px solid #e5e7eb; }
+    tr:nth-child(even) { background: #f8fafc; }
+    .badge {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 999px; font-size: 0.75rem;
+      font-weight: 600; text-transform: uppercase;
+    }
+    .badge-done { background: #dcfce7; color: #166534; }
+    .badge-open { background: #fef3c7; color: #92400e; }
+    .badge-manual { background: #dbeafe; color: #1e40af; }
+    .badge-critical { background: #fee2e2; color: #991b1b; }
+    .status-card {
+      background: white; border: 1px solid #e5e7eb;
+      border-radius: 10px; padding: 20px; margin: 16px 0;
+      border-left: 4px solid var(--gold);
+    }
+    .status-card h4 { color: var(--navy); margin-bottom: 8px; font-size: 1rem; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { padding: 6px 0; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start; gap: 8px; }
+    .checklist li:last-child { border-bottom: none; }
+    .check { color: var(--green); font-weight: bold; flex-shrink: 0; }
+    .uncheck { color: var(--red); font-weight: bold; flex-shrink: 0; }
+    .pending { color: var(--amber); font-weight: bold; flex-shrink: 0; }
+    .callout {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border: 1px solid #fcd34d; border-radius: 10px;
+      padding: 16px 20px; margin: 20px 0;
+    }
+    .callout-title { font-weight: 700; color: #92400e; margin-bottom: 4px; }
+    .callout p { color: #78350f; margin-bottom: 0; }
+    .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+    @media (max-width: 640px) { .section-grid { grid-template-columns: 1fr; } }
+    .stat-card {
+      background: white; border: 1px solid #e5e7eb; border-radius: 10px;
+      padding: 20px; text-align: center;
+    }
+    .stat-card .number { font-size: 2rem; font-weight: 800; color: var(--navy); }
+    .stat-card .label { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .print-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; background: var(--navy); color: white;
+      border: none; border-radius: 8px; font-size: 0.95rem;
+      font-weight: 600; cursor: pointer; margin: 20px 0;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #1a3a5c; }
+    .footer { text-align: center; padding: 30px 0; font-size: 0.78rem; color: var(--muted); border-top: 1px solid #e5e7eb; margin-top: 40px; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; color: var(--navy); }
+  </style>
+</head>
+<body>
+
+<div class="header-bar">
+  <h1>Doc and Send — SEO Strategy Session Summary</h1>
+  <div class="subtitle">Local Mobile Notary SEO Diagnostic & Implementation Report</div>
+  <div class="date">Session Date: February 18, 2026 &nbsp;|&nbsp; Repository: docandsend/docandsend &nbsp;|&nbsp; Domain: docandsend.com</div>
+</div>
+
+<div class="meta-bar">
+  <div class="meta-item"><div class="label">Pages Before</div><div class="value">1</div></div>
+  <div class="meta-item"><div class="label">Pages After</div><div class="value">9</div></div>
+  <div class="meta-item"><div class="label">PRs Created</div><div class="value">2</div></div>
+  <div class="meta-item"><div class="label">PR #1 Status</div><div class="value" style="color:#22c55e;">Merged ✓</div></div>
+  <div class="meta-item"><div class="label">PR #2 Status</div><div class="value" style="color:#f59e0b;">Ready for Review</div></div>
+  <div class="meta-item"><div class="label">Manual Tasks</div><div class="value" style="color:#ef4444;">8 Remaining</div></div>
+</div>
+
+<div class="container">
+
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+  <!-- ===== EXECUTIVE SUMMARY ===== -->
+  <h2>1. Executive Summary</h2>
+  <p>This session addressed <strong>critical local SEO deficiencies</strong> for docandsend.com, a mobile notary service in Nashville, TN. The site had a catastrophic single-page architecture (only 1 URL indexed by Google) despite serving 4+ geographic areas. Two major issues were identified and resolved via pull requests:</p>
+  <ol>
+    <li><strong>Site Architecture Collapse</strong> — Expanded from 1 page to 9 pages with polycentric location targeting</li>
+    <li><strong>Brand Entity Confusion</strong> — Google conflated "Doc and Send" with Dropbox's "DocSend" SaaS product; resolved via schema, meta, and content disambiguation</li>
+  </ol>
+
+  <!-- ===== KEY METRICS ===== -->
+  <h2>2. Key Metrics — Before vs. After</h2>
+  <div class="section-grid">
+    <div class="stat-card"><div class="number">1 → 9</div><div class="label">Indexable Pages (9x increase)</div></div>
+    <div class="stat-card"><div class="number">531 → 8,000+</div><div class="label">Estimated Total Word Count</div></div>
+    <div class="stat-card"><div class="number">0 → 9</div><div class="label">Pages with Canonical Tags</div></div>
+    <div class="stat-card"><div class="number">0 → 9</div><div class="label">Pages with Location-Specific Schema</div></div>
+  </div>
+
+  <!-- ===== PR #1 ===== -->
+  <h2>3. Pull Request #1 — Multi-Page SEO Architecture <span class="badge badge-done">MERGED</span></h2>
+  <p><strong>PR:</strong> <a href="https://github.com/docandsend/docandsend/pull/1" target="_blank">#1 — Implement multi-page SEO architecture for local search optimization</a></p>
+
+  <h3>3a. Technical SEO Infrastructure</h3>
+  <ul class="checklist">
+    <li><span class="check">✅</span> <code>robots.txt</code> — Created with sitemap reference</li>
+    <li><span class="check">✅</span> <code>sitemap.xml</code> — All 9 URLs with priorities and lastmod dates</li>
+    <li><span class="check">✅</span> Canonical tags — Added to homepage and all subpages</li>
+    <li><span class="check">✅</span> Title tag optimized — Changed from "Licensed Realtor & Notary" to "25+ Years Healthcare Exp" (Purple Cow differentiator)</li>
+    <li><span class="check">✅</span> JSON-LD enhanced — <code>areaServed</code> as Place objects (not strings), added <code>hasOfferCatalog</code></li>
+    <li><span class="check">✅</span> Site-wide navigation — <code>&lt;nav&gt;</code> component with correct relative path handling</li>
+  </ul>
+
+  <h3>3b. Location Pages Created (4)</h3>
+  <table>
+    <tr><th>Page</th><th>URL Path</th><th>Focus</th></tr>
+    <tr><td>Nashville</td><td><code>/mobile-notary-nashville-tn/</code></td><td>Downtown, Vanderbilt Medical, TriStar Centennial</td></tr>
+    <tr><td>Hermitage</td><td><code>/mobile-notary-hermitage-tn/</code></td><td>Summit Medical, Andrew Jackson's Hermitage area</td></tr>
+    <tr><td>Mt. Juliet</td><td><code>/mobile-notary-mt-juliet-tn/</code></td><td>Real estate market, Providence, Wilson County</td></tr>
+    <tr><td>Hospital — Davidson Co.</td><td><code>/hospital-notary-davidson-county/</code></td><td>All 7 Davidson County hospitals, bedside notarization</td></tr>
+  </table>
+
+  <h3>3c. Service Pages Created (3)</h3>
+  <table>
+    <tr><th>Page</th><th>URL Path</th><th>Focus</th></tr>
+    <tr><td>Power of Attorney</td><td><code>/power-of-attorney-notary-nashville/</code></td><td>General, Durable, Medical, Springing POA types</td></tr>
+    <tr><td>Real Estate Closings</td><td><code>/real-estate-closing-notary-nashville/</code></td><td>Closings, refinancing, HELOCs, Licensed Realtor angle</td></tr>
+    <tr><td>Healthcare Directives</td><td><code>/healthcare-advance-directives-notary/</code></td><td>Living wills, DNR, POLST, healthcare proxies</td></tr>
+  </table>
+
+  <h3>3d. About / E-E-A-T Page (1)</h3>
+  <table>
+    <tr><th>Page</th><th>URL Path</th><th>Focus</th></tr>
+    <tr><td>About Lisa</td><td><code>/about/</code></td><td>Dual schema (LocalBusiness + Person), credentials, 25yr healthcare background</td></tr>
+  </table>
+
+  <h3>3e. Technical Implementation Per Page</h3>
+  <ul>
+    <li>Exact CSS from homepage (inline, no external stylesheet)</li>
+    <li>Unique meta tags (title, description, keywords, canonical, OpenGraph)</li>
+    <li>LocalBusiness JSON-LD with location-specific <code>areaServed</code></li>
+    <li>Phone (615-484-2552) and Calendly CTAs on every page</li>
+    <li>Tawk.to chat widget on every page</li>
+    <li>Navigation with correct relative paths (<code>../</code> for subdirectories)</li>
+    <li>800–1,200 words unique content per page</li>
+  </ul>
+
+  <!-- ===== PR #2 ===== -->
+  <div class="page-break"></div>
+  <h2>4. Pull Request #2 — Brand Disambiguation <span class="badge badge-open">READY FOR REVIEW</span></h2>
+  <p><strong>PR:</strong> <a href="https://github.com/docandsend/docandsend/pull/2" target="_blank">#2 — Update JSON-LD schema on homepage for entity clarification</a></p>
+
+  <div class="callout">
+    <div class="callout-title">⚠️ Problem Identified</div>
+    <p>Google treats "docandsend.com" as a typo for Dropbox's "DocSend" product. This brand collision causes entity confusion in search results, potentially redirecting potential customers to the wrong product entirely.</p>
+  </div>
+
+  <h3>4a. Changes Made (All 9 Files)</h3>
+  <table>
+    <tr><th>Change</th><th>Before</th><th>After</th></tr>
+    <tr><td>Title tags (all pages)</td><td><code>Doc &amp; Send</code></td><td><code>Doc and Send</code></td></tr>
+    <tr><td>OG titles (all pages)</td><td><code>Doc &amp; Send</code></td><td><code>Doc and Send</code></td></tr>
+    <tr><td>Homepage H1</td><td>Mobile Notary Public: We Come To You.</td><td>Doc and Send Mobile Notary: We Come To You.</td></tr>
+    <tr><td>JSON-LD <code>name</code></td><td>"Doc &amp; Send Mobile Notary Services"</td><td>"Doc and Send Mobile Notary" + location suffix</td></tr>
+    <tr><td>JSON-LD <code>alternateName</code></td><td>(missing)</td><td>["Doc &amp; Send", "Doc &amp; Send Mobile Notary Services", "Doc and Send Mobile Notary Nashville"]</td></tr>
+    <tr><td>JSON-LD <code>description</code> (homepage)</td><td>Generic</td><td>Explicitly states "NOT affiliated with DocSend"</td></tr>
+  </table>
+
+  <h3>4b. Verification</h3>
+  <ul class="checklist">
+    <li><span class="check">✅</span> All 9 HTML files updated</li>
+    <li><span class="check">✅</span> All JSON-LD validated as syntactically correct</li>
+    <li><span class="check">✅</span> Image alt attributes unchanged (visual brand consistency preserved)</li>
+    <li><span class="check">✅</span> No CSS, layout, or functional changes</li>
+    <li><span class="check">✅</span> Tawk.to widget, phone numbers, Calendly links unchanged</li>
+  </ul>
+
+  <!-- ===== REMAINING MANUAL ACTIONS ===== -->
+  <div class="page-break"></div>
+  <h2>5. Remaining Manual Action Items <span class="badge badge-manual">8 ITEMS</span></h2>
+  <p>These tasks <strong>cannot be automated via code</strong> and require manual action by the site owner.</p>
+
+  <div class="status-card">
+    <h4>🔴 CRITICAL — Do Immediately</h4>
+    <ul class="checklist">
+      <li><span class="uncheck">☐</span> <strong>Merge PR #2</strong> — <a href="https://github.com/docandsend/docandsend/pull/2" target="_blank">Review and merge the brand disambiguation PR</a></li>
+      <li><span class="uncheck">☐</span> <strong>Compress Logo Image</strong> — <code>DocandSend_Logo2.png</code> is 491KB (target: &lt;50KB). Use <a href="https://squoosh.app" target="_blank">Squoosh.app</a> to convert to WebP or compressed PNG. Current load time: ~1.62s (loses 30%+ mobile users).</li>
+      <li><span class="uncheck">☐</span> <strong>Compress Lisa Photo</strong> — <code>Lisa_Midshot.webp</code> is 229KB (target: &lt;100KB). Re-export at 80% quality via Squoosh.</li>
+    </ul>
+  </div>
+
+  <div class="status-card">
+    <h4>🟡 HIGH PRIORITY — This Week</h4>
+    <ul class="checklist">
+      <li><span class="uncheck">☐</span> <strong>Google Business Profile</strong> — Once verified (postcard method):
+        <ul>
+          <li>Set business name to "Doc and Send Mobile Notary" (spelled out)</li>
+          <li>Primary Category: "Notary Public" (NOT "Real Estate")</li>
+          <li>Add specific service areas: Nashville, Hermitage, Mt. Juliet, Davidson County</li>
+          <li>List specific notarization types with descriptions</li>
+          <li>Ensure NAP exactly matches: Doc &amp; Send Mobile Notary Services, Nashville, TN 37201, 615-484-2552</li>
+        </ul>
+      </li>
+      <li><span class="uncheck">☐</span> <strong>Google Search Console</strong> — Submit sitemap (<code>https://docandsend.com/sitemap.xml</code>) and request indexing of all 9 new URLs</li>
+    </ul>
+  </div>
+
+  <div class="status-card">
+    <h4>🟢 MEDIUM PRIORITY — Weeks 2-4</h4>
+    <ul class="checklist">
+      <li><span class="uncheck">☐</span> <strong>Create Social Profiles</strong> — Use "Doc and Send" (spelled out) on:
+        <ul>
+          <li>Google Business Profile (once verified)</li>
+          <li>LinkedIn Business Page</li>
+          <li>Facebook Business Page</li>
+          <li>Yelp Business Listing</li>
+        </ul>
+        Then update the empty <code>"sameAs": []</code> arrays in JSON-LD with those URLs.
+      </li>
+      <li><span class="uncheck">☐</span> <strong>Security Headers</strong> — Add HSTS, X-Frame-Options, CSP headers via Cloudflare or hosting config (low priority but easy wins)</li>
+      <li><span class="uncheck">☐</span> <strong>GBP Ongoing</strong> — Post weekly "mobile notary tips" targeting specific locations (e.g., "What to bring for hospital notarization in Davidson County"). Seed Q&amp;A about healthcare document notarization.</li>
+    </ul>
+  </div>
+
+  <!-- ===== SITE ARCHITECTURE MAP ===== -->
+  <h2>6. Final Site Architecture</h2>
+  <table>
+    <tr><th>URL</th><th>Type</th><th>Sitemap Priority</th></tr>
+    <tr><td><code>https://docandsend.com/</code></td><td>Homepage</td><td>1.0</td></tr>
+    <tr><td><code>https://docandsend.com/mobile-notary-nashville-tn/</code></td><td>Location</td><td>0.9</td></tr>
+    <tr><td><code>https://docandsend.com/mobile-notary-hermitage-tn/</code></td><td>Location</td><td>0.8</td></tr>
+    <tr><td><code>https://docandsend.com/mobile-notary-mt-juliet-tn/</code></td><td>Location</td><td>0.8</td></tr>
+    <tr><td><code>https://docandsend.com/hospital-notary-davidson-county/</code></td><td>Location/Service</td><td>0.9</td></tr>
+    <tr><td><code>https://docandsend.com/power-of-attorney-notary-nashville/</code></td><td>Service</td><td>0.8</td></tr>
+    <tr><td><code>https://docandsend.com/real-estate-closing-notary-nashville/</code></td><td>Service</td><td>0.8</td></tr>
+    <tr><td><code>https://docandsend.com/healthcare-advance-directives-notary/</code></td><td>Service</td><td>0.8</td></tr>
+    <tr><td><code>https://docandsend.com/about/</code></td><td>E-E-A-T</td><td>0.7</td></tr>
+  </table>
+
+  <!-- ===== STRATEGIC PRINCIPLES ===== -->
+  <h2>7. Strategic Principles Applied</h2>
+  <table>
+    <tr><th>Principle</th><th>Application</th></tr>
+    <tr><td><strong>Polycentric Authority</strong> (Ostrom)</td><td>Separate pages for each geographic commons served — Google can now map relevance to specific local queries</td></tr>
+    <tr><td><strong>Purple Cow</strong> (Godin)</td><td>Lead with "25+ Years Healthcare Experience" differentiator, not "Licensed Realtor" (commodity). Healthcare notary = remarkable in the notary space.</td></tr>
+    <tr><td><strong>Empirical Rigor</strong> (Curie)</td><td>Image compression targets quantified. Load time metrics tracked. Schema markup validated.</td></tr>
+    <tr><td><strong>Atomic Systems</strong> (Clear)</td><td>Each page is a complete, self-contained unit with its own schema, meta, and content — modular for future updates.</td></tr>
+    <tr><td><strong>Situated Ethics</strong> (de Beauvoir)</td><td>Healthcare notaries serve vulnerable populations — HIPAA-level trust signals and E-E-A-T credentials prominently displayed.</td></tr>
+  </table>
+
+  <!-- ===== TIMELINE ===== -->
+  <h2>8. Implementation Timeline</h2>
+  <table>
+    <tr><th>Phase</th><th>Timeframe</th><th>Status</th><th>Details</th></tr>
+    <tr><td>Phase I: Technical Triage</td><td>Week 1</td><td><span class="badge badge-done">DONE</span></td><td>Title tag, canonical, robots.txt, sitemap, JSON-LD, nav</td></tr>
+    <tr><td>Phase II: Content Architecture</td><td>Weeks 2-4</td><td><span class="badge badge-done">DONE</span></td><td>4 location pages + 3 service pages + about page</td></tr>
+    <tr><td>Brand Disambiguation</td><td>Week 1</td><td><span class="badge badge-open">PR OPEN</span></td><td>Entity signals across all 9 pages (PR #2)</td></tr>
+    <tr><td>Phase III: GBP Optimization</td><td>Post-verification</td><td><span class="badge badge-manual">MANUAL</span></td><td>Awaiting postcard verification</td></tr>
+    <tr><td>Phase IV: E-E-A-T Amplification</td><td>Weeks 2-4</td><td><span class="badge badge-manual">MANUAL</span></td><td>Social profiles, sameAs URLs, weekly GBP posts</td></tr>
+    <tr><td>Image Compression</td><td>Immediate</td><td><span class="badge badge-critical">CRITICAL</span></td><td>Logo 491KB → &lt;50KB, Photo 229KB → &lt;100KB</td></tr>
+  </table>
+
+  <!-- ===== REPOSITORY LINKS ===== -->
+  <h2>9. Repository & PR Links</h2>
+  <ul>
+    <li><strong>Repository:</strong> <a href="https://github.com/docandsend/docandsend" target="_blank">github.com/docandsend/docandsend</a></li>
+    <li><strong>Live Site:</strong> <a href="https://docandsend.com" target="_blank">docandsend.com</a></li>
+    <li><strong>PR #1 (Merged):</strong> <a href="https://github.com/docandsend/docandsend/pull/1" target="_blank">Implement multi-page SEO architecture</a></li>
+    <li><strong>PR #2 (Open):</strong> <a href="https://github.com/docandsend/docandsend/pull/2" target="_blank">Brand disambiguation — DocSend entity confusion fix</a></li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title">💡 Next Session Priority</div>
+    <p>Once GBP is verified and social profiles exist, the next session should focus on: (1) updating <code>sameAs</code> arrays with profile URLs, (2) implementing review schema markup, (3) adding FAQ schema to service pages, and (4) building local citations on legal/notary directories.</p>
+  </div>
+
+  <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+  <div class="footer">
+    <p>Generated by GitHub Copilot for docandsend/docandsend &nbsp;|&nbsp; Session: February 18, 2026</p>
+    <p>To save as PDF: Click the Print button above → Select "Save as PDF" as your printer destination.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
