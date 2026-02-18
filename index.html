@@ -6,11 +6,13 @@
 
   <meta charset="UTF-8" />
 
-  <title>Mobile Notary Nashville | Doc & Send | Licensed Realtor & Notary</title>
+  <title>Mobile Notary Nashville | Doc & Send | 25+ Years Healthcare Exp</title>
 
   <meta name="description" content="Licensed Realtor and mobile notary with 25+ years healthcare experience. Serving Nashville, Hermitage & Mt. Juliet. Hospital & home visits. Call 615-484-2552." />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="canonical" href="https://docandsend.com/" />
 
   <meta name="keywords" content="mobile notary Nashville, licensed realtor notary, healthcare notary Nashville, hospital notary Davidson County, notary public Hermitage TN, weekend notary, power of attorney notary" />
 
@@ -201,6 +203,76 @@
         background: rgba(11, 35, 64, 0.1);
 
         box-shadow: none;
+
+    }
+
+    /* NAVIGATION */
+
+    nav {
+
+      margin-bottom: 32px;
+
+      background: rgba(11, 35, 64, 0.02);
+
+      border-radius: var(--ds-radius-md);
+
+      padding: 12px 20px;
+
+      overflow-x: auto;
+
+      -webkit-overflow-scrolling: touch;
+
+    }
+
+    nav ul {
+
+      display: flex;
+
+      list-style: none;
+
+      margin: 0;
+
+      padding: 0;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      align-items: center;
+
+    }
+
+    nav li {
+
+      white-space: nowrap;
+
+    }
+
+    nav a {
+
+      color: var(--ds-navy);
+
+      font-weight: 600;
+
+      font-size: 0.88rem;
+
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+
+    }
+
+    nav a:hover {
+
+      color: var(--ds-gold);
+
+    }
+
+    nav a.active {
+
+      color: var(--ds-gold);
 
     }
 
@@ -637,7 +709,115 @@
 
     },
 
-    "areaServed": ["Nashville", "Hermitage", "Mt. Juliet", "Davidson County", "Antioch", "Donelson"],
+    "areaServed": [
+
+      {
+
+        "@type": "Place",
+
+        "name": "Nashville",
+
+        "address": {
+
+          "@type": "PostalAddress",
+
+          "addressLocality": "Nashville",
+
+          "addressRegion": "TN"
+
+        }
+
+      },
+
+      {
+
+        "@type": "Place",
+
+        "name": "Hermitage",
+
+        "address": {
+
+          "@type": "PostalAddress",
+
+          "addressLocality": "Hermitage",
+
+          "addressRegion": "TN"
+
+        }
+
+      },
+
+      {
+
+        "@type": "Place",
+
+        "name": "Mt. Juliet",
+
+        "address": {
+
+          "@type": "PostalAddress",
+
+          "addressLocality": "Mt. Juliet",
+
+          "addressRegion": "TN"
+
+        }
+
+      },
+
+      {
+
+        "@type": "Place",
+
+        "name": "Davidson County",
+
+        "address": {
+
+          "@type": "PostalAddress",
+
+          "addressRegion": "TN"
+
+        }
+
+      },
+
+      {
+
+        "@type": "Place",
+
+        "name": "Antioch",
+
+        "address": {
+
+          "@type": "PostalAddress",
+
+          "addressLocality": "Antioch",
+
+          "addressRegion": "TN"
+
+        }
+
+      },
+
+      {
+
+        "@type": "Place",
+
+        "name": "Donelson",
+
+        "address": {
+
+          "@type": "PostalAddress",
+
+          "addressLocality": "Donelson",
+
+          "addressRegion": "TN"
+
+        }
+
+      }
+
+    ],
 
     "geo": {
 
@@ -657,7 +837,101 @@
 
     ],
 
-    "description": "Licensed Realtor and mobile notary public offering midday, evening, weekend and hospital notary services in Nashville & Davidson County."
+    "description": "Licensed Realtor and mobile notary public offering midday, evening, weekend and hospital notary services in Nashville & Davidson County.",
+
+    "sameAs": [],
+
+    "hasOfferCatalog": {
+
+      "@type": "OfferCatalog",
+
+      "name": "Notary Services",
+
+      "itemListElement": [
+
+        {
+
+          "@type": "Offer",
+
+          "itemOffered": {
+
+            "@type": "Service",
+
+            "name": "Mobile Notary Services",
+
+            "description": "Mobile notary public services at your location"
+
+          }
+
+        },
+
+        {
+
+          "@type": "Offer",
+
+          "itemOffered": {
+
+            "@type": "Service",
+
+            "name": "Hospital Notary Services",
+
+            "description": "Notary services at hospitals and healthcare facilities"
+
+          }
+
+        },
+
+        {
+
+          "@type": "Offer",
+
+          "itemOffered": {
+
+            "@type": "Service",
+
+            "name": "Real Estate Closing Notary",
+
+            "description": "Notary services for real estate transactions and closings"
+
+          }
+
+        },
+
+        {
+
+          "@type": "Offer",
+
+          "itemOffered": {
+
+            "@type": "Service",
+
+            "name": "Power of Attorney Notarization",
+
+            "description": "Notarization of power of attorney documents"
+
+          }
+
+        },
+
+        {
+
+          "@type": "Offer",
+
+          "itemOffered": {
+
+            "@type": "Service",
+
+            "name": "Healthcare Advance Directives",
+
+            "description": "Notarization of healthcare directives and living wills"
+
+          }
+
+        }
+
+      ]
+
+    }
 
   }
 
@@ -698,6 +972,32 @@
       </div>
 
     </header>
+
+    <nav>
+
+      <ul>
+
+        <li><a href="/" class="active">Home</a></li>
+
+        <li><a href="/mobile-notary-nashville-tn/">Nashville</a></li>
+
+        <li><a href="/mobile-notary-hermitage-tn/">Hermitage</a></li>
+
+        <li><a href="/mobile-notary-mt-juliet-tn/">Mt. Juliet</a></li>
+
+        <li><a href="/hospital-notary-davidson-county/">Hospital Notary</a></li>
+
+        <li><a href="/power-of-attorney-notary-nashville/">Power of Attorney</a></li>
+
+        <li><a href="/real-estate-closing-notary-nashville/">Real Estate</a></li>
+
+        <li><a href="/healthcare-advance-directives-notary/">Healthcare Directives</a></li>
+
+        <li><a href="/about/">About</a></li>
+
+      </ul>
+
+    </nav>
 
     <main>
 
