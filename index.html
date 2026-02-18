@@ -697,14 +697,15 @@
   z-index: 9999;
   text-decoration: none;
   animation: breathing 2.5s ease-in-out infinite;
-  transition: filter 0.2s ease;
+  transition: filter 0.2s ease, transform 0.2s ease;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(52, 72, 96, 0.4);
+  will-change: transform;
 }
 .floating-calc-btn:hover {
   animation-play-state: paused;
   filter: brightness(1.15);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
   </style>
