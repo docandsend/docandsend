@@ -675,6 +675,38 @@
   }
 }
 
+/* Floating Fee Calculator Button */
+@keyframes breathing {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(52, 72, 96, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(52, 72, 96, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(52, 72, 96, 0.4); }
+}
+.floating-calc-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #344860;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  text-decoration: none;
+  animation: breathing 2.5s ease-in-out infinite;
+  transition: filter 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(52, 72, 96, 0.4);
+}
+.floating-calc-btn:hover {
+  animation-play-state: paused;
+  filter: brightness(1.15);
+  transform: scale(1.05);
+}
+
   </style>
 
   <script type="application/ld+json">
@@ -1769,6 +1801,9 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 
 </script>
+
+<!-- Floating Fee Calculator Button -->
+<a href="#calculator" class="floating-calc-btn">FEE CALCULATOR</a>
 
 </body>
 
