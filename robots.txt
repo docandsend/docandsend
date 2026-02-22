@@ -1,3 +1,19 @@
 User-agent: *
 Allow: /
 Sitemap: https://docandsend.com/sitemap.xml
+
+# Allow AI answer engines for AEO (Answer Engine Optimization)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
