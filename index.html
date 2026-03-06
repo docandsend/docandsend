@@ -287,7 +287,9 @@
 
     nav a.active {
 
-      color: var(--ds-gold);
+      color: var(--ds-navy);
+      text-decoration: underline;
+      text-underline-offset: 3px;
 
     }
 
@@ -629,7 +631,7 @@
 
     footer { margin-top: 40px; border-top: 1px solid rgba(148, 163, 184, 0.35); padding-top: 24px; font-size: 0.8rem; color: var(--ds-muted); text-align: center; }
 
-    .seo-footer { margin-top: 12px; font-size: 0.75rem; opacity: 0.8; line-height: 1.8; }
+    .seo-footer { margin-top: 12px; font-size: 0.75rem; color: #444444; line-height: 1.8; }
 
     .seo-footer span { display: inline-block; margin: 0 6px; }
 
@@ -692,9 +694,9 @@
 
 /* Floating Fee Calculator Button */
 @keyframes breathing {
-  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(52, 72, 96, 0.4); }
-  50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(52, 72, 96, 0.6); }
-  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(52, 72, 96, 0.4); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 .floating-calc-btn {
   position: fixed;
@@ -986,6 +988,7 @@
 
   </script>
 
+  <link rel="preload" as="image" href="Lisa_Midshot.webp" type="image/webp" fetchpriority="high" />
 </head>
 
 <body>
@@ -996,7 +999,7 @@
 
       <div class="brand">
 
-        <img src="DocandSend_Logo2.png" alt="Doc & Send Mobile Notary logo" />
+        <img src="DocandSend_Logo2.png" alt="Doc & Send Mobile Notary logo" width="520" height="334" loading="eager" />
 
       </div>
 
@@ -1136,7 +1139,7 @@
   <div class="section-header">
     <div class="notary-header-wrapper">
       <h2 class="section-title">Meet Your Notary</h2>
-      <img src="Lisa_Midshot.webp" alt="Lisa - Mobile Notary Nashville" class="lisa-image">
+      <img src="Lisa_Midshot.webp" alt="Lisa - Mobile Notary Nashville" width="1080" height="802" loading="eager" fetchpriority="high" class="lisa-image">
     </div>
     <p class="section-tagline">Accuracy, Professionalism, and Confidentiality.</p>
   </div>
@@ -1440,7 +1443,7 @@
 
             <div style="margin-top: 20px; text-align: center;">
 
-                <button class="btn-primary" onclick="window.location.href='tel:16154842552'" style="background: var(--ds-gold); width: 100%;">
+                <button class="btn-primary" onclick="window.location.href='tel:16154842552'" style="background: var(--ds-gold); width: 100%; color: #0b2340;">
 
                   Get Exact Quote
 
@@ -1466,7 +1469,7 @@
             
             <!-- Service Details -->
             <div style="margin-bottom: 25px;">
-                <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e3a5f;">
+                <label for="calc-signatures" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e3a5f;">
                     Number of Signatures
                 </label>
                 <input type="number" id="calc-signatures" min="1" value="1" 
