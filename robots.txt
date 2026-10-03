@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://docandsend.com/sitemap.xml
+Sitemap: https://docandsendnotary.com/sitemap.xml
 
 # Allow AI answer engines for AEO (Answer Engine Optimization)
 User-agent: Google-Extended
