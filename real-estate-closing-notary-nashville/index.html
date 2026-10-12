@@ -714,6 +714,24 @@
   }
   </script>
 
+  <link rel="stylesheet" href="/assets/consent.css" />
+  <meta name="ds-tawk-src" content="https://embed.tawk.to/678e4dc9af5bfec1dbdd7ced/1iig9edh9" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', false);
+  </script>
 </head>
 <body>
 
@@ -1273,27 +1291,20 @@ document.addEventListener('DOMContentLoaded', function() {
       <span>Davidson County</span>
     </p>
     <p style="margin-top: 12px; font-size: 0.75rem;">&copy; <span id="year"></span> DocandSend.com Mobile Notary Services. All rights reserved.</p>
-  </footer>
+        <div class="ds-footer-links">
+        <a href="/privacy/">Privacy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="#cookie-settings" class="ds-cookie-settings">Cookie settings</a>
+      </div>
+    </footer>
 
 </div>
-
-<!-- Tawk.to Live Chat -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/678e4dc9af5bfec1dbdd7ced/1iig9edh9';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
 
 <!-- Year Auto-fill -->
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
+  <script src="/assets/consent.js" defer></script>
 </body>
 </html>

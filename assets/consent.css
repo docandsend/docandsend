@@ -1,0 +1,207 @@
+/* Doc & Send consent banner and contact dock.
+   Accept and Reject share one button style so neither choice is emphasized. */
+
+:root {
+  --ds-banner-offset: 0px;
+}
+
+.ds-consent-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2147483000;
+  background: #f6f3ed;
+  color: #222222;
+  border-top: 3px solid #0b2340;
+  box-shadow: 0 -10px 28px rgba(11, 35, 64, 0.16);
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+.ds-consent-banner[hidden] {
+  display: none !important;
+}
+
+.ds-consent-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ds-consent-copy {
+  min-width: 0;
+}
+
+.ds-consent-banner h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #0b2340;
+}
+
+.ds-consent-banner p {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #222222;
+}
+
+.ds-consent-banner a {
+  color: #0b2340;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ds-consent-status:empty {
+  display: none;
+}
+
+.ds-consent-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: min(280px, 100%);
+  flex: 0 0 auto;
+}
+
+.ds-consent-choice {
+  appearance: none;
+  margin: 0;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 2px solid #0b2340;
+  background: #0b2340;
+  color: #f6f3ed;
+  font: 600 0.95rem/1.2 system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ds-consent-choice:hover {
+  background: #16365f;
+  border-color: #16365f;
+}
+
+.ds-consent-choice:focus-visible,
+.ds-chat-btn:focus-visible,
+.ds-dock-link:focus-visible,
+.ds-cookie-settings:focus-visible,
+.ds-consent-banner a:focus-visible,
+.ds-footer-links a:focus-visible {
+  outline: 3px solid #c89a4b;
+  outline-offset: 2px;
+}
+
+.ds-footer-links {
+  margin-top: 12px;
+  font-size: 0.8rem;
+}
+
+.ds-footer-links a {
+  color: #0b2340;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ds-contact-dock {
+  position: fixed;
+  left: 12px;
+  bottom: calc(var(--ds-banner-offset, 0px) + 12px);
+  z-index: 2147482000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  width: max-content;
+  max-width: min(220px, calc(100vw - 24px));
+  padding: 8px;
+  background: rgba(246, 243, 237, 0.97);
+  border: 1px solid rgba(11, 35, 64, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+.ds-dock-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 35, 64, 0.28);
+  background: #ffffff;
+  color: #0b2340;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ds-chat-btn {
+  appearance: none;
+  margin: 0;
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 2px solid #0b2340;
+  background: #0b2340;
+  color: #f6f3ed;
+  font: 600 0.85rem/1.2 system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.ds-chat-btn[hidden] {
+  display: none !important;
+}
+
+.ds-chat-btn:hover {
+  background: #16365f;
+  border-color: #16365f;
+}
+
+body.ds-consent-open {
+  padding-bottom: var(--ds-banner-offset, 0px);
+}
+
+body.ds-consent-open .floating-calc-btn {
+  bottom: calc(var(--ds-banner-offset, 0px) + 16px);
+}
+
+html.ds-tawk-suppressed iframe[src*="tawk.to"],
+html.ds-tawk-suppressed #tawkchat-container,
+html.ds-tawk-suppressed .tawk-min-container,
+html.ds-tawk-suppressed [class*="tawk-"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 720px) {
+  .ds-consent-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ds-consent-actions {
+    width: 100%;
+  }
+
+  .floating-calc-btn {
+    right: 12px;
+    bottom: calc(var(--ds-banner-offset, 0px) + 12px);
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-calc-btn {
+    animation: none;
+  }
+}

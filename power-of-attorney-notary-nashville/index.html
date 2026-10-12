@@ -870,6 +870,24 @@
 
   </script>
 
+  <link rel="stylesheet" href="/assets/consent.css" />
+  <meta name="ds-tawk-src" content="https://embed.tawk.to/696d57412bf6a3197bbcbe0a/1jf9hpm4g" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', false);
+  </script>
 </head>
 
 <body>
@@ -1839,6 +1857,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       </div>
 
+          <div class="ds-footer-links">
+        <a href="/privacy/">Privacy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="#cookie-settings" class="ds-cookie-settings">Cookie settings</a>
+      </div>
     </footer>
 
   </div>
@@ -1849,28 +1872,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   </script>
 
-  <script type="text/javascript">
-
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-
-(function(){
-
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-
-s1.async=true;
-
-s1.src='https://embed.tawk.to/696d57412bf6a3197bbcbe0a/1jf9hpm4g';
-
-s1.charset='UTF-8';
-
-s1.setAttribute('crossorigin','*');
-
-s0.parentNode.insertBefore(s1,s0);
-
-})();
-
-</script>
-
+    <script src="/assets/consent.js" defer></script>
 </body>
 
 </html>
